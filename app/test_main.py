@@ -18,3 +18,9 @@ import pytest
 def test_values(cat_age: int,
                 dog_age: int, human_age: list) -> None:
     assert get_human_age(cat_age, dog_age) == human_age
+
+
+def pytest_typeerror(cat_age: int,
+                dog_age: int) -> None:
+    with pytest.raises(TypeError):
+        get_human_age(cat_age, dog_age)
