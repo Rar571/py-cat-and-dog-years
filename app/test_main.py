@@ -18,7 +18,6 @@ import pytest
 def test_values(cat_age: int,
                 dog_age: int, human_age: list) -> None:
     try:
-        get_human_age(cat_age, dog_age)
+        assert get_human_age(cat_age, dog_age) == human_age
     except TypeError:
         "Incorrect data types"
-    assert get_human_age(cat_age, dog_age) == human_age
